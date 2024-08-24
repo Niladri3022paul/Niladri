@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Task 2 Calculator.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <form>
+                <div class="display">
+                    <input type="text" name="display" id="display" style="width:315px;">
+                </div>
+                <div>
+                    <input type="button"  class="operator" value="AC" onclick="clearDisplay()">
+                    <input type="button"  class="operator" value="DE" onclick="display.value = display.value.toString().slice(0,-1)">
+                    <input type="button"  class="operator"value="." onclick="appendDisplay('.')">
+                    <input type="button" class="operator" value="/" onclick="appendDisplay('/')">
+                </div>
+                <div>
+                    <input type="button"  value="7" onclick="appendDisplay('7')">
+                    <input type="button"  value="8" onclick="appendDisplay('8')">
+                    <input type="button"  value="9" onclick="appendDisplay('9')">
+                    <input type="button" class="operator" value="*" onclick="appendDisplay('*')">
+                </div>
+                <div>
+                    <input type="button"  value="4" onclick="appendDisplay('4')">
+                    <input type="button"  value="5" onclick="appendDisplay('5')">
+                    <input type="button"  value="6" onclick="appendDisplay('6')">
+                    <input type="button" class="operator" value="-" onclick="appendDisplay('-')">
+                </div>
+                <div>
+                    <input type="button"  value="1" onclick="appendDisplay('1')">
+                    <input type="button"  value="2" onclick="appendDisplay('2')">
+                    <input type="button"  value="3" onclick="appendDisplay('3')">
+                    <input type="button" class="operator" value="+" onclick="appendDisplay('+')">
+                </div>
+                <div>
+                    <input type="button" value="00" onclick="appendDisplay('00')">
+                    <input type="button" value="0" onclick="appendDisplay('0')">
+                    <input type="button" class="equal operator" value="=" onclick="calculateResult()">
+                </div>
+            </form>
+        </div>
+    </div>
+   <script>
+    function appendDisplay(value){
+        document.getElementById("display").value += value;
+    }
+    function clearDisplay(){
+        document.getElementById("display").value = "";
+    }
+    function calculateResult(){
+        try{
+            document.getElementById("display").value = eval(document.getElementById("display").value)
+        }catch(error){
+            document.getElementById("display").value = "Error";
+        }
+    }
+   </script>
+</body>
+</html>    

@@ -1,0 +1,56 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif; 
+}
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    width:100%;
+    background-image:url("pexels-thibault-trillet-44912-167491.jpg");
+    background-position:center;
+    background-size:cover;
+    position:relative;
+}
+.calculator{
+    background-color: #f7efe5;
+    padding:20px;
+    border-radius:10px;
+    text-align: left;
+}
+.calculator form input{
+    border:none;
+    outline:none;
+    width:60px;
+    height:60px;
+    border-radius:10px;
+    box-shadow:-8px -8px 15px rgba(106, 6, 173, 0.1), 5px 5px 15px rgba(64,4,84,0.2);
+    background:transparent;
+    font-size:20px;
+    color:#7743db;
+    font-weight:bolder;
+    margin:10px;
+    cursor:pointer;
+}
+form .display{
+    display:flex;
+    justify-content:center;
+    margin:20px 0;
+}
+form.display input{
+    text-align:right;
+    flex:1;
+    font-size:55px;
+    box-shadow:none;    
+}
+form div.equal{
+    width:145px;
+}
+form input.operator{
+    color:#021613;
+    font-weight:bolder;
+    background-color: #c3acd0;
+}
